@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Powerup : MonoBehaviour, IActivatePwrp
+// Script que contiene cada objeto powerup.
+
+public class Powerup : MonoBehaviour, IDestroyPwrp
 {
     [SerializeField] protected PowerupEffect powerupEffect;
 
-    public void ActivarPowerup()
+    public void DestroyPwrp()
     {
         Destroy(gameObject);
     }
@@ -16,7 +18,7 @@ public class Powerup : MonoBehaviour, IActivatePwrp
         if (collision.CompareTag("Player"))
         {
             powerupEffect.Apply(collision.gameObject);
-            ActivarPowerup();
+            DestroyPwrp();
         }
     }
 }

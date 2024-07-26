@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IActivatePwrp
+public interface IDestroyPwrp
 {
-    void ActivarPowerup();
+    void DestroyPwrp();
 }
